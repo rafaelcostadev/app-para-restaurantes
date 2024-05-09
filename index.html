@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="styles/output.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <title>+1 Burguer é uma delicia</title>
+
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header class="w-full h-[400px] bg-zinc-500 bg-home bg-cover bg-center">
+            <div class="w-full h-full flex flex-col justify-center items-center">
+                <img
+                    src="assets/logo-foto.jpg"
+                    alt="Logo FrontBurguer"
+                    class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200">
+                <h1 class="text-4xl mt-4 mb-2 font-bold text-white">+1 Burguer</h1>
+                <span class="text-white font-medium">Rua Vergueiro 10, Vila Mariana - SP</span>
+                <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="data-span">
+                    <span class="text-white font-bold">Seg à Dom 18: as 22:00</span>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-cyan-950 mt-9 mb-6">Conheça nosso menu</h2>
+
+        <!-- Body Menu -->
+
+        <div id="menu">
+            <main
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mx-auto max-w-7xl px-2 mb-8">
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/hamb-1.png"
+                        alt=" Hambuguer Smash"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Hambuguer Duplo Smash</p>
+                        <p class="text-sm">Burguer de 160g + 2 Queijo prato e molho especial da casa.</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 18,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Hambuguer Duplo Smash"
+                                data-price="18.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/hamb-2.png"
+                        alt=" Hambuguer Smash"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Hambuguer Duplo</p>
+                        <p class="text-sm">Burguer de 160g + 2 Queijo prato e molho especial da casa.</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 32,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Hambuguer Duplo"
+                                data-price="32.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/hamb-3.png"
+                        alt=" Hambuguer Smash"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Hambuguer Cheedar Duplo</p>
+                        <p class="text-sm">Burguer de 160g + 2 Queijo prato e molho especial da casa.</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 32,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Hambuguer Cheedar Duplo"
+                                data-price="32.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/hamb-4.png"
+                        alt=" Hambuguer Smash"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Hambuguer Chicken</p>
+                        <p class="text-sm">Burguer de 160g + 2 Queijo prato e molho especial da casa.</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 32,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Hambuguer Chicken"
+                                data-price="32.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                 <!-- Product item -->
+                 <div class="flex gap-3">
+                    <img
+                        src="./assets/hamb-5.png"
+                        alt=" Hambuguer Smash"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Hambuguer Salada</p>
+                        <p class="text-sm">Burguer de 160g + 2 Queijo prato e molho especial da casa.</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 22,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Hambuguer Salada"
+                                data-price="22.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                 <!-- Product item -->
+                 <div class="flex gap-3">
+                    <img
+                        src="./assets/hamb-6.png"
+                        alt=" Hambuguer Smash"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Hambuguer Salada Smash</p>
+                        <p class="text-sm">Burguer de 160g + 2 Queijo prato e molho especial da casa.</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 27,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Hambuguer Salada Smash"
+                                data-price="27.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                 <!-- Product item -->
+                 <div class="flex gap-3">
+                    <img
+                        src="./assets/hamb-7.png"
+                        alt=" Hambuguer Smash"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Hambuguer Onios Rings</p>
+                        <p class="text-sm">Burguer de 160g + 2 Queijo prato e molho especial da casa.</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 34,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Hambuguer Onios Rings"
+                                data-price="34.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                 <!-- Product item -->
+                 <div class="flex gap-3">
+                    <img
+                        src="./assets/hamb-8.png"
+                        alt=" Hambuguer Smash"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Hambuguer Vegano </p>
+                        <p class="text-sm">Burguer de 160g + 2 Queijo prato e molho especial da casa.</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 34,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Hambuguer Vegano"
+                                data-price="34.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+            </main>
+
+            <div class="mx-auto max-w-7xl px-4 mb-6">
+                <h2 class="font-bold text-3xl">
+                    Porções
+                </h2>
+            </div>
+
+            <!-- Grid Candy -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mx-auto max-w-7xl px-2 mb-8"
+                id="menu">
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/porcao-1.png"
+                        alt="Fritas com Bacon"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Fritas com Bacon</p>
+                        <p class="text-sm">400g de Fritas no capricho com Bacon crocantes</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 16,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Fritas com Bacon (400g)"
+                                data-price="16.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                <!-- Product item -->
+                <div class="flex gap-3 w-full">
+                    <img
+                        src="./assets/porcao-2.png"
+                        alt="Fritas com Cheddar e Bacon"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Fritas com Cheddar e Bacon</p>
+                        <p class="text-sm">600g de Fritas no capricho com Bacon crocantes e Cheddar mega Cremoso</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 27,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Fritas com Cheddar e Bacon (600g)"
+                                data-price="27.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                 <!-- Product item -->
+                 <div class="flex gap-3 w-full3 ">
+                    <img
+                        src="./assets/porcao-3.png"
+                        alt="Onion Rings"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Onion Rings</p>
+                        <p class="text-sm">Crocantes por fora, macias por dentro. Uma experiência irresistível!</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 22,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Onion Rings (300g)"
+                                data-price="22.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+               
+
+               
+
+            </div>
+            <!-- End Grid Candy -->
+
+            <div class="mx-auto max-w-7xl px-4 mb-6">
+                <h2 class="font-bold text-3xl">
+                    Sobremesas
+                </h2>
+            </div>
+
+            <!-- Grid Candy -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mx-auto max-w-7xl px-2 mb-8"
+                id="menu">
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/bolo-1.png"
+                        alt="Coca-Cola Lata"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Morango com Nutella</p>
+                        <p class="text-sm">Delícia de morango em cada camada, amor em cada pedaço. Aproveite!</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 9,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Bolo Morango com Nutella"
+                                data-price="7.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/bolo-2.png"
+                        alt="Coca-Cola Lata"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Oreo com Morango e Kit Kat</p>
+                        <p class="text-sm">Oreo e Kit Kat, uma combinação irresistível e crocante!</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 9,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Bolo de Oreo com Morango e Kit Kat"
+                                data-price="9.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                 <!-- Product item -->
+                 <div class="flex gap-3">
+                    <img
+                        src="./assets/bolo-3.png"
+                        alt="Coca-Cola Lata"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Brigadeiro Cremoso</p>
+                        <p class="text-sm">Delicie-se com nosso brigadeiro cremoso: uma explosão de sabor!</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 9,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Bolo de Brigadeiro Cremoso"
+                                data-price="9.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+               
+
+               
+
+            </div>
+            <!-- End Grid Candy -->
+
+            <div class="mx-auto max-w-7xl px-4 mb-6">
+                <h2 class="font-bold text-3xl">
+                    Bebidas
+                </h2>
+            </div>
+
+            <!-- Grid Drinks -->
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mx-auto max-w-7xl px-2 mb-16"
+                id="menu">
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/refri-1.png"
+                        alt="Coca-Cola Lata"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Coca-Cola Lata 350ml</p>
+                        <p class="text-sm">Uma Coca Geladinha com um Burguer Saboro, Manda muito bem!</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 7,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Coca-Cola Lata 350ml"
+                                data-price="7.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/refri-2.png"
+                        alt="Coca-Cola Lata"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Guaraná Lata 350ml</p>
+                        <p class="text-sm">O Irresistível Guaraná do Brasil com seu lanche perfeito!</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 7,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Guaraná Lata 350ml"
+                                data-price="7.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/refri-3.png"
+                        alt="Fanta Laranja 350ml"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Fanta Laranja 350ml</p>
+                        <p class="text-sm">Refresque-se com o sabor cítrico e vibrante da Fanta Laranja.</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 7,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Fanta Laranja 350ml"
+                                data-price="7.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/cerveja-1.png"
+                        alt="Coca-Cola Lata"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Heineken Long 330ml</p>
+                        <p class="text-sm">O Irresistível Guaraná do Brasil com seu lanche perfeito!</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 12,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Heineken Long"
+                                data-price="7.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+                <!-- Product item -->
+                <div class="flex gap-3">
+                    <img
+                        src="./assets/cerveja-2.png"
+                        alt="Coca-Cola Lata"
+                        class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-3 duration-300">
+
+                    <div class="info-box">
+                        <p class="font-bold">Stella Artois Long 330ml</p>
+                        <p class="text-sm">Seu sabor marcante e sofisticado é muito bem balanceado.</p>
+                        <div class="flex items-center gap-3 justify-between mt-3">
+                            <p class="font-bold text-lg">R$ 12,90</p>
+                            <button
+                                class="bg-gray-950 px-5 rounded add-to-cart-btn p-0 pt-4 pb-4"
+                                data-name="Stella Artois Long"
+                                data-price="12.90">
+                                <i class="fas fa-cart-plus text-lg text-white "></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Product item -->
+
+            </div>
+            <!-- End Grid Drinks -->
+
+        </div>
+        <!-- End Body Menu -->
+
+        <!-- Modal Cart -->
+        <div class="bg-black/70 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden">
+
+            <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+                <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
+                <!-- Cart items will go here  -->
+                <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+                <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
+                <p class="font-bold mt-4">Endereço de entrega</p>
+                <input type="text"
+                placeholder="Digite aqui seu endereço completo"
+                id="address"
+                class="w-full border-2 p-2 rounded my-2 text-gray-500"
+                >
+
+                <p class="text-red-500 hidden font-bold" id="address-warn">Digite seu endereço completo!</p>
+                <div id="close-modal-btn" class="w-full flex items-center justify-between mt-5">
+                    <button class="text-gray-400 hover:text-gray-700">Fechar</button>
+                    <button id="checkout-btn" class="bg-green-500 text-white px-4 py-2 rounded">Finalizar pedido</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- End Modal cart -->
+
+
+        <!-- Button Cart Footer -->
+        <footer class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center">
+            <button class="flex items-center gap-2 text-white font-bold"
+            id="cart-btn">
+                (<span id="cart-count">0</span>)
+                Veja meu Carrinho
+                <i class="fas fa-cart-plus text-lg text-white "></i>
+            </button>
+        </footer>
+        <!-- end Button Cart Footer -->
+
+        <script src="https://kit.fontawesome.com/c42d848684.js" crossorigin="anonymous"></script>
+    </body>
+</html>

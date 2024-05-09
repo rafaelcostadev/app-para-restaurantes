@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+body{
+    background-color: #f6f7f8;
+}
+
+.add-to-cart-btn{
+    padding: 0.4rem 0.6rem ;
+}
+
+.info-box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
