@@ -530,7 +530,8 @@
 
         <!-- Modal Cart -->
         <div
-            class="bg-black/70 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden">
+            class="bg-black/70 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+            id="cart-modal">
 
             <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
                 <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
@@ -546,8 +547,8 @@
                     class="w-full border-2 p-2 rounded my-2 text-gray-500">
 
                 <p class="text-red-500 hidden font-bold" id="address-warn">Digite seu endereço completo!</p>
-                <div id="close-modal-btn" class="w-full flex items-center justify-between mt-5">
-                    <button class="text-gray-400 hover:text-gray-700">Fechar</button>
+                <div class="w-full flex items-center justify-between mt-5">
+                    <button id="close-modal-btn" class="text-gray-400 hover:text-gray-700">Fechar</button>
                     <button id="checkout-btn" class="bg-green-500 text-white px-4 py-2 rounded">Finalizar pedido</button>
                 </div>
 
@@ -558,7 +559,7 @@
         <!-- Button Cart Footer -->
         <footer
             class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center">
-            <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
+            <button id="cart-btn" class="flex items-center gap-2 text-white font-bold" >
                 (<span id="cart-count">0</span>) Veja meu Carrinho
                 <i class="fas fa-cart-plus text-lg text-white "></i>
             </button>
@@ -566,5 +567,6 @@
         <!-- end Button Cart Footer -->
 
         <script src="https://kit.fontawesome.com/c42d848684.js" crossorigin="anonymous"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>

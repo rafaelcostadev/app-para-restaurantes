@@ -2708,8 +2708,11 @@ body{
   padding: 0.4rem 0.6rem ;
 }
 
-.teste{
-  background-color: chocolate;
+.info-box{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 @media (min-width: 640px) {
