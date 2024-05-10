@@ -2825,6 +2825,29 @@ body{
   cursor: pointer;
 }
 
+.btn {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.span {
+  color: var(--font-color-dark);
+  font-weight: bold;
+}
+
+.input:checked + .btn {
+  background-color: var(--main-color);
+}
+
+.input:checked + .btn .span {
+  color: var(--font-color-light);
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -2951,3 +2974,4 @@ body{
     }
   }
 }
+  

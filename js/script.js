@@ -158,19 +158,20 @@ checkoutBtn.addEventListener("click", function(){
         addressWarn.style.display = "flex"
         addressInput.classList.add("border-red-500")
         return;
+        
     }
 
     // enviar o pedido para api do zapzap
     const cartItems = cart.map((item) => {
         return (
-            ` ${item.name} Quantidade: (${item.quantity}) Preço: R$${item.price} |`
+            `\n *${item.name}*  \n Quantidade: ( *${item.quantity}* )\n Preço: R$${item.price} \n`
         )
     }).join("")
 
     const message = encodeURIComponent(cartItems)
-    const phone = "11965853118"
+    const phone = "5511976406057"
 
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+    window.open(`https://wa.me/${phone}?text=%2AQuero+fazer+meu+pedido%3A%2A\n ${message} -- Endereço: ${addressInput.value}`, "_blank")
 
     cart.length = 0;
     updateCartModal();
