@@ -104,3 +104,23 @@ function upDateCartModal(){
 });
 
 }
+// Caso queira usar um scroll infinito de imagens para os banner
+// window.addEventListener('DOMContentLoaded', function() {
+//     const galeria = document.getElementById('galeria');
+//     galeria.addEventListener('scroll', function() {
+//         const scrollPosition = galeria.scrollLeft;
+//         const galeriaWidth = galeria.scrollWidth - galeria.clientWidth;
+        
+//         // Verifica se o usuário está próximo do final da galeria
+//         if (scrollPosition >= galeriaWidth * 0.8) {
+//             // Carrega mais imagens aqui
+//             // Por exemplo, você pode adicionar mais imagens à galeria
+//             galeria.innerHTML += `
+//                 <img class="w-[80%]" src="assets/banner-01.png" alt="">
+//                 <img class="w-[80%]" src="assets/banner-02.png" alt="">
+//                 <img class="w-[80%]" src="assets/banner-03.png" alt="">
+//             `;
+//         }
+//     });
+// });
+

@@ -20,3 +20,17 @@ body{
     justify-content: space-between;
     flex-direction: column;
 }
+
+.galeria {
+    height: auto; /* Define a altura da galeria para 70% da altura da janela de visualização */
+    overflow-x: auto; /* Adiciona uma barra de rolagem vertical caso as imagens excedam a altura da galeria */
+    
+    ::-webkit-scrollbar {
+        height: 10px; /* Altura da barra de rolagem */
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: #ff0000; /* Cor da barra de rolagem */
+        border-radius: 5px; /* Borda arredondada da barra de rolagem */
+    }
+  }
