@@ -545,8 +545,10 @@
 
             <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
                 <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
+
                 <!-- Cart items will go here -->
                 <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+
                 <p class="font-bold">Total:
                     <span id="cart-total">0.00</span></p>
                 <p class="font-bold mt-4">Endereço de entrega</p>
@@ -557,6 +559,27 @@
                     class="w-full border-2 p-2 rounded my-2 text-gray-500">
 
                 <p class="text-red-500 hidden font-bold" id="address-warn">Digite seu endereço completo!</p>
+
+                <div class="wrapper mt-2">
+                    <div class="option">
+                      <input checked="" value="pix" name="btn" type="radio" class="input">
+                      <div class="btn">
+                        <span class="span">Pix</span>
+                      </div>
+                    </div>
+                    <div class="option">
+                      <input value="cartao" name="btn" type="radio" class="input">
+                      <div class="btn">
+                        <span class="span">Cartão</span>
+                      </div>  </div>
+                    <div class="option">
+                      <input value="Dinheiro" name="btn" type="radio" class="input">
+                      <div class="btn">
+                        <span class="span">Dinheiro</span>
+                      </div>  
+                    </div>
+                  </div>
+
                 <div class="w-full flex items-center justify-between mt-5">
                     <button id="close-modal-btn" class="text-gray-400 hover:text-gray-700">Fechar</button>
                     <button id="checkout-btn" class="bg-green-500 text-white px-4 py-2 rounded">Finalizar pedido</button>

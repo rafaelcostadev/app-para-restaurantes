@@ -1,126 +1,199 @@
 const menu = document.getElementById("menu")
-// CartBtn é o botao do Footer
 const cartBtn = document.getElementById("cart-btn")
-// Modal onde a caixa do carrinho abre como um popup
 const cartModal = document.getElementById("cart-modal")
 const cartItemsContainer = document.getElementById("cart-items")
-const cartTotal= document.getElementById("cart-total")
-const  checkoutBtn= document.getElementById("checkout-btn")
-const  closeModalBtn= document.getElementById("close-modal-btn")
-const  cartCounter= document.getElementById("cart-count")
-const  addressInput= document.getElementById("address")
-const  adressWarn= document.getElementById("address-warn")
+const cartTotal = document.getElementById("cart-total")
+const checkoutBtn = document.getElementById("checkout-btn")
+const closeModalBtn= document.getElementById("close-modal-btn")
+const cartCounter  =document.getElementById("cart-count")
+const addressInput = document.getElementById("address")
+const addressWarn = document.getElementById("address-warn")
 
-//Criando uma lista de produtos
+let cart = []; // array
 
-let cart = [];
-
-// Abrir o modal do Carrinho
+// abrir o modal do carrinho
 cartBtn.addEventListener("click", function(){
+    updateCartModal();
     cartModal.style.display = "flex"
-    // upDateCartModal();
-});
-
-// Fechar o modal quando clicar fora
-cartModal.addEventListener("click", function(event){
-  if(event.target === cartModal){
-        cartModal.style.display = "none"
-  }
 })
 
-//  Botao de fechar dentro do modal
+// fechar o modal qnd clicar fora
+cartModal.addEventListener("click",function(event){
+    if(event.target === cartModal){
+        cartModal.style.display = "none"
+    }
+})
+
+
+// fechar pelo botao fechar
 closeModalBtn.addEventListener("click", function(){
     cartModal.style.display = "none"
 })
 
-// vamos pegar dentro do menu o botao do carrinho
-
 menu.addEventListener("click", function(event){
-    // console.log(event.target)
-    let parentButton = event.target.closest(".add-to-cart-btn")
-     if(parentButton){
-        const name =  parentButton.getAttribute("data-name")
-        const price =  parseFloat(parentButton.getAttribute("data-price"))        
+   // console.log(event.target) - PARA PEGAR O TARGET DE QUALQUER ITEM
+   let parentButton = event.target.closest(".add-to-cart-btn")
+   
+   if(parentButton){
+    const name = parentButton.getAttribute("data-name")
+    const price = parseFloat(parentButton.getAttribute("data-price"))
 
-        // Vamos adicionar no carrinho os valores acima de nome e valor do produto
-        addToCart(name, price)
-     }
+    // adicionar no carrinho
+
+    addToCart(name, price)
+
+
+
+   }
 })
 
-
-//funcao para adcionar tudo ao carrinho
-
+// função p adicionar no carrrinho
 function addToCart(name, price){
-    // Vamos verificar se o item já existe na lista e nao duplicar o mesmo
-    const existItem = cart.find(item => item.name === name )
+    const existingItem = cart.find(item => item.name === name)
 
-    if(existItem){
-        //se o item já existir, aumenta apenas a quantidade +1
-        existItem.quantify += 1;        
+    if(existingItem){
+        // se o item existe muda apenas a quantidade (+1)
+        existingItem.quantity += 1;
     }else{
-        //Adcionamos (push) os itens abaixo dentro do carrinho [array] escrito global lá em cima
         cart.push({
             name,
             price,
-            quantify: 1,
-     })
-
+            quantity: 1,
+        })
     }
 
-     upDateCartModal()
+    updateCartModal()
 
 }
 
-//atualizando o carrinho no front
-function upDateCartModal(){
-    let total = 0;
 
-    cart.forEach(item =>{
+// atualiza o carrinho
+function updateCartModal(){
+    cartItemsContainer.innerHTML = "";
+    let total = 0;
+    cart.forEach(item => {
         const cartItemElement = document.createElement("div");
-        cartItemElement.classList.add("flex", "justify-bettween", "mb-4", "flex-col")
+        cartItemElement.classList.add("flex", "justify-between", "mb-4", "flex-col")
 
         cartItemElement.innerHTML = `
-            <div class= "flex items-center justify-between">
+            <div class="flex items-center justify-between">
                 <div>
                     <p class="font-medium">${item.name}</p>
-                    <p>Qtd: ${item.quantify}</p>
-                    <p class="font-medium mt-2">${item.price.toFixed(2)}</p>
+                    <p>Qtd: ${item.quantity}</p>
+                    <p class="font-medium mt-2">R$ ${item.price.toFixed(2)}</p>
                 </div>
-                
-                <button>
+
+                <button class="remove-from-cart-btn" data-name="${item.name}">
                     Remover
                 </button>
-            </div>    
+
+            </div>
         `
-    total += item.price * item.quantify;
+        total += item.price * item.quantity
 
-    cartItemsContainer.appendChild(cartItemElement)
-
+        cartItemsContainer.appendChild(cartItemElement)
     })
-    // Formatando o total para valor em moeda Brasil
-    cartTotal.textContent = total.toLocaleString("Pt-BR", {
+
+    cartTotal.textContent = total.toLocaleString("pt-BR",{
         style: "currency",
-        currency:"BRL"
-});
+        currency: "BRL"
+    });
+    
+    cartCounter.innerHTML = cart.length;
+}
+
+// função para remover item do carrinho
+cartItemsContainer.addEventListener("click", function (event){
+    if(event.target.classList.contains("remove-from-cart-btn")){
+        const name = event.target.getAttribute("data-name")
+        removeItemCart(name);
+    }
+})
+
+function removeItemCart(name){
+    const index = cart.findIndex(item => item.name === name);
+    if(index !== -1){
+        const item = cart[index];
+        if(item.quantity > 1){
+            item.quantity -= 1;
+            updateCartModal();
+            return;
+        }
+        cart.splice(index, 1);
+        updateCartModal();
+    }
+}
+
+addressInput.addEventListener("input", function(event){
+    let inputValue = event.target.value;
+
+    if(inputValue !== ""){
+        addressInput.classList.remove("border-red-500")
+        addressWarn.style.display = "none"
+    }
+
+    //
+})
+
+// finalizar pedido
+checkoutBtn.addEventListener("click", function(){
+    const isOpen = checkRestaurantOpen();
+    if(!isOpen){
+        Toastify({
+            text: "Restaurante fechado! Consulte o horário de funcionamento.",
+            duration: 3000,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#ef4444",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+        return;
+    }
+    if(cart.length === 0) return;
+    if (addressInput.value === ""){
+        addressWarn.style.display = "flex"
+        addressInput.classList.add("border-red-500")
+        return;
+    }
+
+    // enviar o pedido para api do zapzap
+    const cartItems = cart.map((item) => {
+        return (
+            ` ${item.name} Quantidade: (${item.quantity}) Preço: R$${item.price} |`
+        )
+    }).join("")
+
+    const message = encodeURIComponent(cartItems)
+    const phone = "11965853118"
+
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+
+    cart.length = 0;
+    updateCartModal();
+
+})
+
+// verificar a hora e manipular o card horario
+function checkRestaurantOpen(){
+    const data = new Date();
+    const hora = data.getHours();
+    return hora >= 18 && hora < 22; // boolean true/false
+
+    
+}
+
+const spanItem = document.getElementById("date-span")
+const isOpen = checkRestaurantOpen();
+
+if(isOpen){
+    spanItem.classList.remove("bg-red-500");
+    spanItem.classList.add("bg-green-600")
+}else{
+    spanItem.classList.remove("bg-green-600")
+    spanItem.classList.add("bg-red-500")
 
 }
-// Caso queira usar um scroll infinito de imagens para os banner
-// window.addEventListener('DOMContentLoaded', function() {
-//     const galeria = document.getElementById('galeria');
-//     galeria.addEventListener('scroll', function() {
-//         const scrollPosition = galeria.scrollLeft;
-//         const galeriaWidth = galeria.scrollWidth - galeria.clientWidth;
-        
-//         // Verifica se o usuário está próximo do final da galeria
-//         if (scrollPosition >= galeriaWidth * 0.8) {
-//             // Carrega mais imagens aqui
-//             // Por exemplo, você pode adicionar mais imagens à galeria
-//             galeria.innerHTML += `
-//                 <img class="w-[80%]" src="assets/banner-01.png" alt="">
-//                 <img class="w-[80%]" src="assets/banner-02.png" alt="">
-//                 <img class="w-[80%]" src="assets/banner-03.png" alt="">
-//             `;
-//         }
-//     });
-// });
-
